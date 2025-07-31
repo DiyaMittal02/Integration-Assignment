@@ -1,0 +1,144 @@
+:root {
+    --accent: #38e5ff;
+    --neon: #38e5ff;
+    --dark-bg: #181b2b;
+    --light-bg: #f4f8fa;
+    --card-dark: #202336;
+    --card-light: #fff;
+    --font: 'Inter', 'Segoe UI', Arial, sans-serif;
+    --radius: 18px;
+}
+
+body {
+    background: var(--light-bg);
+    color: #232941;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+    transition: background 0.32s;
+}
+
+body.dark {
+    background: var(--dark-bg);
+    color: #d3fdff;
+}
+
+#popup-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 340px;
+    max-width: 410px;
+    margin: 2em;
+    padding: 2.3em 2em 2.1em 2em;
+    border-radius: var(--radius);
+    background: var(--card-light);
+    box-shadow: 0 10px 40px 0 #38e5ff33, 0 8px 34px 5px #30f8f855, 0 3px 16px #22304419;
+    z-index: 2;
+    animation: popIn 0.5s cubic-bezier(.21, .89, .71, 1.2);
+}
+
+body.dark #popup-card {
+    background: var(--card-dark);
+    box-shadow: 0 0 24px 0 #1fffdb91, 0 0 80px 5px #38e5ff18;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 1.8em;
+    text-align: center;
+    background: linear-gradient(90deg, #38e5ff 30%, #0ff1ae 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.1em;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 98%;
+    padding: .7em 1em;
+    border-radius: 8px;
+    border: 1.5px solid #c5eefd;
+    background: #f5fbff;
+    margin-top: .45em;
+    font-size: 1em;
+    outline: none;
+    transition: border-color .2s, background .2s, color .2s;
+}
+
+body.dark .form-group input,
+body.dark .form-group select {
+    background: #23263c;
+    color: #c4f7ff;
+    border-color: #2deaf7;
+}
+
+#actorList {
+    width: 100%;
+}
+
+button,
+
+
+#result {
+    background: #eafdff;
+    color: #223955;
+    border-radius: 10px;
+    padding: 1em 1em .87em 1em;
+    margin-top: .8em;
+    min-height: 36px;
+    box-shadow: 0 1.5px 12px #3ffdea23;
+    font-size: 0.98rem;
+    font-family: 'Fira Mono', monospace;
+    word-break: break-word;
+}
+
+body.dark #result {
+    background: #181b22;
+    color: #86e5ff;
+    border: 1px solid #29dbe9;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    background: #eaf7fd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #38e5ff31;
+    border-radius: 7px;
+}
+
+@media (max-width: 650px) {
+    #popup-card {
+        padding: 1.07em .7em;
+    }
+
+    h1 {
+        font-size: 1.23rem;
+    }
+}

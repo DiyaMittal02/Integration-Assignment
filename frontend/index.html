@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apify Web App</title>
+    <link href="style.css" rel="stylesheet">
+    </link>
+</head>
+
+<body>
+    <div id="popup-card">
+        <button id="modeToggle" title="Switch dark/light mode" aria-label="Switch theme">
+            <svg id="themeIcon" height="22" width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <path
+                    d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42" />
+            </svg>
+
+        </button>
+        <h1>Run an Apify Actor</h1>
+        <div class="form-group">
+            <label for="tokenInput">API Token</label>
+            <input type="text" id="tokenInput" autocomplete="off" placeholder="Paste your API token">
+            <button id="loadBtn">Load Actors</button>
+        </div>
+        <div class="form-group">
+            <label for="actorList">Your Actor</label>
+            <select id="actorList"></select>
+        </div>
+        <div id="schemaForm"></div>
+        <button id="runBtn" style="display:none;">Run Actor</button>
+        <div id="result"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+
+</html>
